@@ -1,8 +1,0 @@
-sequenceDiagram
-    participant Client
-    participant Server
-    Client->>Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/newnote_spa.json
-    activate Server
-    Server-->>Client: 201 Created (JSON Response: [{"message":"note created"}])
-    deactivate Server
-    Note right of browser: The browser executes the callback function that renders the notes

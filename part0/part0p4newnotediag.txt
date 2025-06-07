@@ -1,45 +1,45 @@
 sequenceDiagram
-    participant Client
+    participant browser
     participant Server
-    Client->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/new_notes
+    browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/new_notes
     activate Server    
-    Server-->>Client: 200 OK (HTML Response)
+    Server-->>browser: 200 OK (HTML Response)
     deactivate Server
-    Client->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
     activate Server
-    Server-->>Client: 200 OK (CSS Response)
+    Server-->>browser: 200 OK (CSS Response)
     deactivate Server
-    Client->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
     activate Server
-    Server-->>Client: 200 OK (JS Response)
+    Server-->>browser: 200 OK (JS Response)
     deactivate Server
-    Client->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/common/local-storage.js
+    browser->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/common/local-storage.js
     activate Server
-    Server-->>Client: 200 OK (JS Response)
+    Server-->>browser: 200 OK (JS Response)
     deactivate Server
-    Client->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/content_scripts/gsuite/fte-utils.js
+    browser->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/content_scripts/gsuite/fte-utils.js
     activate Server
-    Server-->>Client: 200 OK (JS Response)
+    Server-->>browser: 200 OK (JS Response)
     deactivate Server
-    Client->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/content_scripts/express/express-fte.js
+    browser->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/content_scripts/express/express-fte.js
     activate Server
-    Server-->>Client: 200 OK (JS Response)
+    Server-->>browser: 200 OK (JS Response)
     deactivate Server
-    Client->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/content_scripts/express/express-fte-utils.js
+    browser->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/content_scripts/express/express-fte-utils.js
     activate Server
-    Server-->>Client: 200 OK (JS Response)
+    Server-->>browser: 200 OK (JS Response)
     deactivate Server
     Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server
-    Client->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://studies.cs.helsinki.fi/exampleapp/data.json
+    browser->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://studies.cs.helsinki.fi/exampleapp/data.json
     activate Server
-    Server-->>Client: 200 OK (JSON Response: [{content: "123", date: "2025-06-07T14:42:05.702Z"}, ... ])
+    Server-->>browser: 200 OK (JSON Response: [{content: "123", date: "2025-06-07T14:42:05.702Z"}, ... ])
     deactivate Server
-    Client->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/resources/SidePanel/sidePanelUtil.js
+    browser->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/resources/SidePanel/sidePanelUtil.js
     activate Server
-    Server-->>Client: 200 OK (JS Response)
+    Server-->>browser: 200 OK (JS Response)
     deactivate Server
-    Client->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/libs/readability.js
+    browser->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/libs/readability.js
     activate Server
-    Server-->>Client: 200 OK (JS Response)
+    Server-->>browser: 200 OK (JS Response)
     deactivate Server
     Note right of browser: The browser executes the callback function that renders the notes

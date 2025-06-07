@@ -1,0 +1,44 @@
+sequenceDiagram
+    participant browser
+    participant Server
+    browser->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/libs/readability.js
+    activate Server
+    Server-->>browser: 200 OK (JS Response)
+    deactivate Server
+    browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    activate Server
+    Server-->>browser: 200 OK (JS Response)
+    deactivate Server
+    browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate Server
+    Server-->>browser: 200 OK (JS Response)
+    deactivate Server
+    browser->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/common/local-storage.js
+    activate Server
+    Server-->>browser: 200 OK (JS Response)
+    deactivate Server
+    browser->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/content_scripts/gsuite/fte-utils.js
+    activate Server
+    Server-->>browser: 200 OK (JS Response)
+    deactivate Server
+    browser->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/content_scripts/express/express-fte-utils.js
+    activate Server
+    Server-->>browser: 200 OK (JS Response)
+    deactivate Server
+    browser->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/resources/SidePanel/sidePanelUtil.js
+    activate Server
+    Server-->>browser: 200 OK (JS Response)
+    deactivate Server
+    browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+    activate Server
+    Server-->>browser: 200 OK (HTML Response)
+    deactivate Server
+    browser->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/content_scripts/express/express-fte.js
+    activate Server
+    Server-->>browser: 200 OK (JS Response)
+    deactivate Server
+    browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate Server
+    Server-->>browser: 200 OK (JSON Response)
+    deactivate Server
+    Note right of browser: The browser executes the callback function that renders the notes
