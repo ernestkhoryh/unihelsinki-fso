@@ -32,7 +32,7 @@ sequenceDiagram
     Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server
     Client->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://studies.cs.helsinki.fi/exampleapp/data.json
     activate Server
-    Server-->>Client: 200 OK (JSON Response: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ])
+    Server-->>Client: 200 OK (JSON Response: [{content: "123", date: "2025-06-07T14:42:05.702Z"}, ... ])
     deactivate Server
     Client->>Server: HTTP GET chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/resources/SidePanel/sidePanelUtil.js
     activate Server
